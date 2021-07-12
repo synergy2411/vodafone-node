@@ -92,3 +92,33 @@
 // console.log(str.length);        // 11
 
 // str.indexOf("i")        // String Constructor Prototype
+
+
+
+
+
+
+
+
+
+// Instance Method - Object.create()
+
+// var Shoe = {
+//     size : 8
+// }
+
+// var magicShoe = Object.create(Shoe);
+
+// console.log(magicShoe.hasOwnProperty("size"))
+// console.log(Shoe.hasOwnProperty("size"));
+
+// console.log(magicShoe);         // { }
+
+// magicShoe.size = 12;
+
+// console.log(magicShoe.size);        // 12
+
+// console.log(Shoe.isPrototypeOf(magicShoe))      // 
+// console.log(magicShoe.isPrototypeOf(Shoe))      // 
+// console.log(Object.prototype.isPrototypeOf(Shoe))           // ?
+// console.log(Object.prototype.isPrototypeOf(magicShoe))           // ?
