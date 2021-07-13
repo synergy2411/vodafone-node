@@ -39,6 +39,30 @@ yargs.command({
     }
 })
 
+yargs.command({
+    command : "remove",
+    description : "to remove single note",
+    builder : {
+        title : {
+            type : "string",
+            demandOption : true,
+            description : "title to remove single note"
+        }
+    },
+    handler : args => {
+        const { title } = args;
+        notes.removeNote(title);
+    }
+})
+
+
+yargs.command({
+    command : "list",
+    description : "to list all notes",
+    handler : args => {
+        notes.listNotes()
+    }
+})
 
 yargs.parse();
 

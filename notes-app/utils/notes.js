@@ -11,9 +11,12 @@ const loadNotes = () => {
     }
 }
 
-const saveNotes = notes => {
-    fs.writeFileSync("./notes.json", JSON.stringify(notes))
+const saveNotes = payload => {
+    fs.writeFileSync("./notes.json", JSON.stringify(payload.notes))
+    if(payload.operation === "ADD")
     console.log(chalk.green("Notes saved"))
+    else 
+    console.log(chalk.green("Notes updated"))
 }
 
 const addNote = (title, body) => {
@@ -24,7 +27,7 @@ const addNote = (title, body) => {
     }else{
         let note = {title, body};
         notes.push(note)
-        saveNotes(notes);
+        saveNotes({notes, operation : "ADD"});
     }
 }
 
@@ -41,6 +44,31 @@ const readNote = title => {
     }
 }
 
+const listNotes = () => {
+    const notes = loadNotes();
+    notes.forEach(note => {
+        console.log(chalk.blue("_________________________"))
+        console.log("Title : ", note.title);
+        console.log("Body : ", note.body);
+    })
+}
+
+const removeNote = title => {
+    const notes = loadNotes();
+    const position = notes.findIndex(note => note.title === title)
+    if(position >= 0){
+        const removedItem = notes.splice(position, 1);
+        if(removedItem.length>0){
+            saveNotes({notes, operation : "REMOVE"});
+        }else{
+            console.log(chalk.red("Unable to remove note"))
+        }
+
+    }else{
+        console.log(chalk.red("Note does not exists."))
+    }
+}
+
 module.exports = { 
-    addNote, readNote
+    addNote, readNote, listNotes, removeNote
 }
