@@ -22,6 +22,24 @@ yargs.command({
     }
 })
 
+
+yargs.command({
+    command : "read",
+    description : "to read single note",
+    builder : {
+        title : {
+            type : "string",
+            demandOption : true,
+            description : "title to read single note"
+        }
+    },
+    handler : args => {
+        const { title } = args;
+        notes.readNote(title);
+    }
+})
+
+
 yargs.parse();
 
 // Parse the command line arguments

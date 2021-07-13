@@ -28,6 +28,19 @@ const addNote = (title, body) => {
     }
 }
 
+const readNote = title => {
+    const notes = loadNotes();
+    const foundNote = notes.find(note => note.title === title);
+    if(!foundNote){
+        console.log(chalk.red("Note does not exist."))
+    }else{
+        console.log(chalk.blue("______________________________"))
+        console.log(chalk.grey("Title : ", foundNote.title))
+        console.log(chalk.grey("Body : ", foundNote.body))
+        console.log(chalk.blue("______________________________"))
+    }
+}
+
 module.exports = { 
-    addNote
+    addNote, readNote
 }
