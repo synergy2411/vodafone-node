@@ -1,0 +1,14 @@
+{
+  "name": "vdf-sumit",
+  "version": "1.0.0",
+  "description": "The basics of NPM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sumit Khandelwal",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.1"
+  }
+}
