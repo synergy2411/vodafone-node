@@ -1,5 +1,6 @@
 # NPM Commands
 - npm init
+- npm install : seeks for dependencies in package.json file and install them locally
 - npm install chalk@4.1.0 --save
 - npm outdated
 - npm update
@@ -10,3 +11,7 @@
 - npm config set registry=<registry_name>
 - npm publish
 - npm search
+
+# VS Code Extensions for Node
+- npm 
+- npm intellisense
