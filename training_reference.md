@@ -43,3 +43,11 @@ require()
 
  # nodemon - restarts server automaticaaly whenever we save the JS file
 > npm install nodemon -g
+
+# Mongo DB Atlas
+username - synergy
+password - s46BeW38iwyIL7Pw 
+mongodb+srv://synergy:s46BeW38iwyIL7Pw@cluster0.e9xsq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+> Database Access
+> Network Access -> include your current IP Address
