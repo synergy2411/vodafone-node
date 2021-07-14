@@ -74,3 +74,7 @@ yargs.parse();
 // > node index.js read --title="Some Title"
 // > node index.js remove --title="Some Title"
 // > node index.js list
+// > node index.js update --title="" --body=""
+
+// TODO App
+// > node index.js add --label="" status=""

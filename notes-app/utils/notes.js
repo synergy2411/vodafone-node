@@ -21,7 +21,9 @@ const saveNotes = payload => {
 
 const addNote = (title, body) => {
     const notes = loadNotes();
-    const noteFound = notes.find(note => note.title === title)
+    const noteFound = notes.find(function(note){
+        return note.title === title
+    })
     if(noteFound){
         console.log(chalk.red("Note already exists. Try again!"))
     }else{
