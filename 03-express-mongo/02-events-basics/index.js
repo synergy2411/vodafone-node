@@ -30,3 +30,8 @@ emitter.on("foo", (data) => {
 emitter.emit("foo", {message : "First Time Called"})
 // emitter.emit("foo", {message : "Second Time Called"})
 // emitter.emit("bar")
+
+
+// process.on("uncaughtException", code => {
+
+// })
