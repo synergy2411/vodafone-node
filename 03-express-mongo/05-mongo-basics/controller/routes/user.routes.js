@@ -38,4 +38,29 @@ const getUser = async (req, res) => {
     }
 }
 
-module.exports = { getUsers, createUser, getUser }
+const deleteUser = async (req, res) => {
+    const { id } = req.params;
+    try{
+    const deletedUser = await UserModel.findByIdAndDelete(id)
+    return res.send({...deletedUser._doc})
+    }catch(err){
+        console.log(err)
+        return res.send(err)
+    }
+}
+
+const updateUser = async (req, res) => {
+    const { id } = req.params;
+    if(req.body){
+        try {
+        const updatedUser = await  UserModel.findByIdAndUpdate(id, {...req.body})
+        return res.send({...updatedUser._doc})
+        }catch(err){
+            console.log(err)
+            return res.send(err)
+        }
+    }
+}
+
+
+module.exports = { getUsers, createUser, getUser, deleteUser, updateUser }

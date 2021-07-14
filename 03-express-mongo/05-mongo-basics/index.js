@@ -1,5 +1,5 @@
 const express = require("express");
-const { getUsers, createUser, getUser } = require("./controller/routes/user.routes")
+const { getUsers, createUser, getUser, deleteUser, updateUser } = require("./controller/routes/user.routes")
 require("./db");
 
 const app = express();
@@ -11,5 +11,9 @@ app.get("/users", getUsers)
 app.post("/users", createUser)
 
 app.get("/users/:id", getUser)
+
+app.delete("/users/:id", deleteUser)
+
+app.patch("/users/:id", updateUser)
 
 app.listen(9090, () => console.log("Server started at PORT : 9090"))
