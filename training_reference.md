@@ -12,6 +12,6 @@
 - npm publish
 - npm search
 
-# VS Code Extensions for Node
+# VS Code Extensions for NodeJS
 - npm 
 - npm intellisense
