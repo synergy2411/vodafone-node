@@ -39,3 +39,7 @@ require()
  - OOPS Concepts
  - latest JAvaSCript 
  - Angular itself programmed in TS
+
+
+ # nodemon - restarts server automaticaaly whenever we save the JS file
+> npm install nodemon -g
