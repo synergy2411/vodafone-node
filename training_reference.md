@@ -15,3 +15,27 @@
 # VS Code Extensions for NodeJS
 - npm 
 - npm intellisense
+
+
+<!-- > ng serve --port="4000" --prod --base-href="" -->
+<!-- http://localhost:4200 -->
+
+
+> typescript > tsc compiler -> JS File -> import
+
+<!-- ES6 module import -->
+> import {} from "./";
+> export {}
+
+# ES5 Common Module - 
+module.exports = {}
+require()
+
+# Angular Code -> Package.json -> typescript (TSC) / ts-node -> Browser
+
+# Angular - TypeScript | JavaSCript | DART
+# Why TypeScript ?
+ - Robust Type Definition
+ - OOPS Concepts
+ - latest JAvaSCript 
+ - Angular itself programmed in TS

@@ -1,5 +1,5 @@
 const yargs = require("yargs");
-const notes = require("./utils/notes");
+const { addNote, removeNote, readNote, listNotes } = require("./utils/notes");
 
 yargs.command({
     command : "add",
@@ -18,7 +18,7 @@ yargs.command({
     }, 
     handler : (args) => {
         let {title, body} = args;
-        notes.addNote(title, body);
+        addNote(title, body);
     }
 })
 
@@ -35,7 +35,7 @@ yargs.command({
     },
     handler : args => {
         const { title } = args;
-        notes.readNote(title);
+        readNote(title);
     }
 })
 
@@ -51,7 +51,7 @@ yargs.command({
     },
     handler : args => {
         const { title } = args;
-        notes.removeNote(title);
+        removeNote(title);
     }
 })
 
@@ -60,11 +60,13 @@ yargs.command({
     command : "list",
     description : "to list all notes",
     handler : args => {
-        notes.listNotes()
+        listNotes()
     }
 })
 
-yargs.parse();
+yargs.parse()
+
+// console.log("YARGS - ", yargs.parse());
 
 // Parse the command line arguments
 // console.log(yargs.parse());
@@ -78,3 +80,7 @@ yargs.parse();
 
 // TODO App
 // > node index.js add --label="" status=""
+
+
+// console.log("PROCESS - ",  process.argv)
+
