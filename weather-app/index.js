@@ -11,13 +11,13 @@ app.get("/", (req, res) => {
 app.get("/address", async (req, res) => {
     const { location } = req.query;
     try{
-    const { lat, lng } =  await getGeocode(location)
-    try{
-        const { temperature, summary } = await getForecast(lat, lng)
-        return res.send({temperature, summary, location})
-    }catch(err){
-        return res.send({message : "Unable to fetch from Darksky", err})
-    }
+        const { lat, lng } =  await getGeocode(location)
+        try{
+            const { temperature, summary } = await getForecast(lat, lng)
+            return res.send({temperature, summary, location})
+        }catch(err){
+            return res.send({message : "Unable to fetch from Darksky", err})
+        }
     }catch(err){
         return res.send({message : "Unable to fetch from Mapbox Server", err})
     }
