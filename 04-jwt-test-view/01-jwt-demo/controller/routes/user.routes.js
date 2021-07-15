@@ -1,7 +1,8 @@
 const UserModel = require("../model/user.model");
 const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const MY_SUPER_SECRET_KEY = "This is my secret key";
+const MY_SUPER_SECRET_KEY = process.env.SECRET_KEY || "MY secret key pharase"
+
 
 const createUser = async (req, res) => {
     if(req.body){
@@ -11,7 +12,7 @@ const createUser = async (req, res) => {
             const newUser = new UserModel({...req.body, password : hashedPassword })
             try{
                 const user = await newUser.save()
-                const token = jwt.sign({id : user._doc._id}, MY_SUPER_SECRET_KEY)
+                const token = jwt.sign({id : user._doc._id}, MY_SUPER_SECRET_KEY , { expiresIn : "2 days"})
                 return res.send({...user._doc, password : null, token})
             }catch(err){
                 console.log(err)
@@ -26,6 +27,8 @@ const createUser = async (req, res) => {
 }
 
 const getProfile =  (req, res) => {
+    // Check for email & password from DB
+
     jwt.verify(req.token, MY_SUPER_SECRET_KEY, async (err, decode) => {
         if(err){
             return res.send({message : "token not valid"})

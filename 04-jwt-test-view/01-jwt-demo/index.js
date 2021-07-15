@@ -1,6 +1,11 @@
 const express = require("express");
 require("./db");
 const { createUser, getProfile } = require("./controller/routes/user.routes")
+const env = require("dotenv");
+
+env.config();
+// process.env
+const PORT = process.env.PORT || 9090
 const app = express();
 
 app.use(express.json());
@@ -28,4 +33,4 @@ const ensureToken = (req, res, next) => {
 
 app.get("/users/profile", ensureToken, getProfile)
 
-app.listen(9099, () => console.log("Server started at PORT : 9099"))
+app.listen(PORT, () => console.log("Server started at PORT : ", PORT))
