@@ -67,9 +67,37 @@ mongodb+srv://synergy:s46BeW38iwyIL7Pw@cluster0.e9xsq.mongodb.net/myFirstDatabas
 > Generate SSH Key
     - download git bash from GIT SCM
     - ssh-keygen -> will generate SSH Key
-> Change "start" script in package.json -> node index.js
+> Change "start" script in package.json -> "node index.js"
 > PORT will come from process.env.PORT in "index.js"
 > GITHUB Signup
 > Create new Repo on Github
 > Create gitignore file > node_modules
 > Push code to GITHUB Repo
+
+
+
+Download heroku CLI Tool
+
+> heroku --version
+
+> heroku login
+
+> heroku keys:add
+
+> heroku create <Project_Name>
+
+# commit all code to git
+
+# push all code to git
+
+> git remote
+
+> git push heroku main
+
+<!-- Nodemon, mocha -->
+
+
+
+
+
+> node app running on local server
