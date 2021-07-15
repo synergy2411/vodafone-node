@@ -17,3 +17,5 @@ app.delete("/users/:id", deleteUser)
 app.patch("/users/:id", updateUser)
 
 app.listen(9090, () => console.log("Server started at PORT : 9090"))
+
+module.exports = app;

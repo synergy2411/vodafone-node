@@ -12,7 +12,7 @@ const getUsers = async (req, res) => {
 }
 
 const createUser = async (req, res) => {
-    console.log("REQUEST BODY", req.body)
+    // console.log("REQUEST BODY", req.body)
     try{
     const newUser = new UserModel(req.body)
     const savedUser = await newUser.save()
