@@ -54,6 +54,7 @@ mongodb+srv://synergy:s46BeW38iwyIL7Pw@cluster0.e9xsq.mongodb.net/myFirstDatabas
 
 
 # Testing 
+> npm i mocha -g
 > chai : Assertion Library
 > chai-http : remote Server call
 

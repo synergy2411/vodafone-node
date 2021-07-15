@@ -11,6 +11,21 @@ describe("Users Resource", () => {
         await UserModel.deleteMany()
     })
 
+    describe("DELETE Single User", () => {
+        it("/DELETE/{id}", (done) => {
+            const user = new UserModel({ name : "John Doe", email : "john@test.com", age : 32, isAdmin : true});
+            user.save((err, res) => {
+                chai.request(app)
+                    .delete("/users/"+user._id)
+                    .end((err, res) => {
+                        chai.expect(res.status).to.be.eql(200)
+                        chai.expect(res.body.email).to.be.eql("john@test.com")
+                        done()
+                    })
+            })
+        })
+    })
+
     describe("GET Single user", () => {
         it("/GET/{id}", (done) => {
             const user = new UserModel({ name : "John Doe", email : "john@test.com", age : 32, isAdmin : true})
