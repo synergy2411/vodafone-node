@@ -4,6 +4,8 @@ const { getGeocode } = require("./utils/geocode")
 
 const app = express();
 
+const PORT = process.env.PORT || 3030
+
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/index.html")
 })
@@ -23,4 +25,4 @@ app.get("/address", async (req, res) => {
     }
 })
 
-app.listen(9000, () => console.log("Server started at PORT : 9000"))
+app.listen(PORT, () => console.log("Server started at PORT : ", PORT))
