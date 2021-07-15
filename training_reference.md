@@ -59,3 +59,17 @@ mongodb+srv://synergy:s46BeW38iwyIL7Pw@cluster0.e9xsq.mongodb.net/myFirstDatabas
 > chai-http : remote Server call
 
 > beforeEach, afterEach, beforeAll, afterAll
+
+
+# Heroku Cloud
+
+> Heroku Signup
+> Generate SSH Key
+    - download git bash from GIT SCM
+    - ssh-keygen -> will generate SSH Key
+> Change "start" script in package.json -> node index.js
+> PORT will come from process.env.PORT in "index.js"
+> GITHUB Signup
+> Create new Repo on Github
+> Create gitignore file > node_modules
+> Push code to GITHUB Repo
