@@ -51,3 +51,10 @@ mongodb+srv://synergy:s46BeW38iwyIL7Pw@cluster0.e9xsq.mongodb.net/myFirstDatabas
 
 > Database Access
 > Network Access -> include your current IP Address
+
+
+# Testing 
+> chai : Assertion Library
+> chai-http : remote Server call
+
+> beforeEach, afterEach, beforeAll, afterAll
