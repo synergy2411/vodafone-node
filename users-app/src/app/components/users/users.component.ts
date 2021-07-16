@@ -14,6 +14,23 @@ export class UsersComponent implements OnInit {
   users : User[];
   showForm : boolean = false;
 
+  // ColuumnDefs : Table Header
+  columnDefs = [
+    {
+      field : "_id", headerName : "User ID", sortable : true
+    },{
+      field : "name", sortable : true, filter : true
+    },{
+      field : "email"
+    },{
+      field : "isAdmin", headerName : "Admin", filter : true
+    },{
+      field : "age"
+    }
+  ]
+  // rowData : []
+  rowData : Array<User> = [];
+
   constructor(
     private dataService : DataService,
     private excelService : ExcelService
@@ -27,6 +44,7 @@ export class UsersComponent implements OnInit {
     this.dataService.getUsers()
     .subscribe((data : User[]) => {
       this.users = data;
+      this.rowData = data;
     })
   }
 
@@ -46,7 +64,6 @@ export class UsersComponent implements OnInit {
         this.getUser()
       })
   }
-
 
   onDownload(){
     this.excelService.exportToExcel(this.users, "my-awesome-users")

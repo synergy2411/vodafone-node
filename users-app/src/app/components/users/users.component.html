@@ -21,7 +21,19 @@
 
 
   <br> <hr>
-  <table class="table table-stripped table-hover">
+<!-- {{ rowData | json}} -->
+<br>
+  <ag-grid-angular
+    style = "width : 800px; height: 300px;"
+    [rowData] = "rowData"
+    [columnDefs] = "columnDefs"
+    pagination = true
+    paginationAutoPageSize = true
+    class="ag-theme-balham">
+  </ag-grid-angular>
+
+
+  <!-- <table class="table table-stripped table-hover">
     <thead>
       <tr>
         <td>Id</td>
@@ -40,5 +52,5 @@
         <td>{{ user.isAdmin}}</td>
       </tr>
     </tbody>
-  </table>
+  </table> -->
 </div>

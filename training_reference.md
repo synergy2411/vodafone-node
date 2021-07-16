@@ -128,3 +128,5 @@ fileType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;ch
   pdf.doc()
   pdf.save() 
   -->
+
+  > npm i ag-grid-angular ag-grid-community --save
