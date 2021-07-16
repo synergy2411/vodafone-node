@@ -120,3 +120,11 @@ fileType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;ch
 
   > npm i bootstrap@4 --save
   > npm i xlsx file-saver --save
+
+  > npm i jspdf --save
+
+  <!-- 
+  const pdf = new jsPDF();
+  pdf.doc()
+  pdf.save() 
+  -->

@@ -17,4 +17,9 @@ export class DataService {
     return this.httpClient.get(this.SERVER_URI)
       .pipe(map(response => <User[]>response['payload']))
   }
+
+  createUser({name, email, age, isAdmin}) : Observable<User | undefined>{
+    return this.httpClient.post<User>(this.SERVER_URI, {name, email, age, isAdmin})
+  }
+
 }
