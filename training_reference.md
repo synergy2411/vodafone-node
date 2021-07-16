@@ -101,3 +101,22 @@ Download heroku CLI Tool
 
 
 > node app running on local server
+
+
+
+
+
+fileType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
+  fileExtension = '.xlsx';
+
+
+
+  > npm i @angular/cli@10 -g
+  > ng new <projectName>
+  > cd project_folder
+  > ng serve --open
+
+  > MEAN Stack App
+
+  > npm i bootstrap@4 --save
+  > npm i xlsx file-saver --save

@@ -1,0 +1,23 @@
+<div class="container">
+  <button class="btn btn-sm btn-danger" (click)="onDownload()">Download to Excel</button>
+  <table class="table table-stripped table-hover">
+    <thead>
+      <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Age</td>
+        <td>Admin</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user._id}}</td>
+        <td>{{ user.name}}</td>
+        <td>{{ user.email}}</td>
+        <td>{{ user.age}}</td>
+        <td>{{ user.isAdmin}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
